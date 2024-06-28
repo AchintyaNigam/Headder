@@ -10,10 +10,13 @@ function Upload() {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
-    if (file.size > 5 * 1024 * 1024) {
+    if (file.size > 5 * 1024 * 1024) 
+    {
       setError('File size exceeds 5 MB');
       setFile(null);
-    } else {
+    } 
+    else 
+    {
       setError(null);
       setFile(file);
     }
@@ -67,6 +70,7 @@ function Upload() {
   return (
     <div>
       <h1>Upload Page</h1>
+      <p>If a header doesn't exit in the file a new one will get created. If it does exist, it will be replaced with your input</p>
       <div {...getRootProps({ className: 'dropzone' })} style={{ border: '2px dashed #cccccc', padding: '20px', textAlign: 'center' }}>
         <input {...getInputProps()} />
         <p>Drag 'n' drop a .docx file here, or click to select one</p>
